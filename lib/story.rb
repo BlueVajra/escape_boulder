@@ -10,7 +10,7 @@ You recall reading something about this guy Feld and his super human powers.
 Rumor has it, if you give him $10 and he matches it with his $10,
 he can magically turn that $20 into $70 Million and give you your $10 back! Feld can be your ticket
 out of here. You try to wake his ass up. He finally comes to life and
-starts to put on his running shows. Whoa, whoa, whoa Feld. Not so fast. You need to help me break out of
+starts to put on his running shoes. Whoa, whoa, whoa Feld. Not so fast. You need to help me break out of
 of this bubble and maybe bag some VC cash along the way! Feld smiles, puts on his glasses, and
 says Yes, I can help you break out of Boulder, but it's not going to be easy...and it's going
 to cost you 85%!"

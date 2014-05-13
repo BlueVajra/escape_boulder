@@ -19,7 +19,7 @@ class Command
     @inventory = []
     @quit == false
     @west_min = 0
-    @east_max = 3
+    @east_max = 5
     @items = ITEMS
     @buildings = BUILDINGS
     @locations = LOCATIONS
