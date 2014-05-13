@@ -45,7 +45,7 @@ class Command
     parsed_command = parse_command(command)
     case parsed_command[0]
       when "east"
-        if @current_building != nil
+        if @current_building == nil
           if @current_location == @east_max
             puts "Trying to leave Boulder already?"
           else
@@ -59,7 +59,7 @@ class Command
 
 
       when "west"
-        if @current_building != nil
+        if @current_building == nil
           if @current_location == @west_min
             puts "Trying to leave Boulder already?"
           else
@@ -75,7 +75,7 @@ class Command
         end
 
       when "d"
-        if @current_building != nil
+        if @current_building == nil
           if @current_location == @east_max
             puts "Trying to leave Boulder already?"
           else
@@ -88,7 +88,7 @@ class Command
         end
 
       when "a"
-        if @current_building != nil
+        if @current_building == nil
           if @current_location == @west_min
             puts "Trying to leave Boulder already?"
           else
