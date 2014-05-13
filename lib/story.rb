@@ -1,4 +1,4 @@
-STORY = "You wake up on the sidewalk cold, wet, broke, slightly horney.
+STORY = "You wake up on the sidewalk cold, wet, broke, slightly horny.
 And stuck inside a bubble. Welcome to Boulder! How the hell
 did you get here? You came in search of legal weed, mountains and start-up dreams
 and now find yourself, on the corner of 9th and Pearl, sharing a blanket and snuggled up

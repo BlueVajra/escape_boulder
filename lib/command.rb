@@ -29,7 +29,9 @@ class Command
 
   def run
     puts TITLE
+    sleep(2)
     puts STORY
+    sleep(2)
     describe_quest
 
     until @quit == true
@@ -42,7 +44,6 @@ class Command
   def do_command(command)
     parsed_command = parse_command(command)
     case parsed_command[0]
-
       when "east"
         if @current_location == @east_max
           puts "Trying to leave Boulder already?"
@@ -53,6 +54,27 @@ class Command
         end
 
       when "west"
+        if @current_location == @west_min
+          puts "Trying to leave Boulder already?"
+        else
+          @current_location -= 1
+          puts "going west"
+          describe_location
+          if @current_location == 0
+            describe_quest_brief
+          end
+        end
+
+      when "d"
+        if @current_location == @east_max
+          puts "Trying to leave Boulder already?"
+        else
+          @current_location += 1
+          puts "going east"
+          describe_location
+        end
+
+      when "a"
         if @current_location == @west_min
           puts "Trying to leave Boulder already?"
         else
@@ -90,7 +112,7 @@ class Command
         describe_quest
       when "help"
         puts "You have the following commands"
-        puts "help, east, west, look, enter <building>, exit, take <item>, give <item>, quest, quit"
+        puts "help, east, west, look, enter <building>, exit, take <item>, give <item>, quest, inventory, quit"
       else
         puts "3 hours of programming doesn't leave much room for other commands"
 
@@ -129,7 +151,10 @@ class Command
   def check_quest(item)
     puts "Why Thank You!"
     if @quests[@current_quest][:item].include?(item)
-      puts "AWESOME!"
+      puts "!!!!!!!!!!!!!!!!!!!!"
+      puts "!!! AWESOME SAUCE !!"
+      puts "!!!!!!!!!!!!!!!!!!!!"
+
       @current_quest += 1
       if @current_quest == 5
         finish_quest
