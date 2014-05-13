@@ -4,12 +4,16 @@
 # take <object>
 # give <object>
 
+require_relative 'locations'
+
 class Command
   def initialize
     @current_location = 0
     @current_building = nil
     @inventory = []
     @quit == false
+    @west_min = 0
+    @east_max = 3
   end
 
   def run
@@ -27,9 +31,22 @@ class Command
       when "go"
         case parsed_command[1]
           when "east"
-            puts "going east"
+            if @current_location == @east_max
+              puts "Trying to leave Boulder already?"
+            else
+              @current_location += 1
+              puts "going east"
+              describe_location
+            end
+
           when "west"
-            puts "going west"
+            if @current_location == @west_min
+              puts "Trying to leave Boulder already?"
+            else
+              @current_location -= 1
+              puts "going west"
+              describe_location
+            end
           else
             puts "Which direction is that?"
         end
@@ -37,9 +54,26 @@ class Command
       when "enter"
 
       when "exit"
+        puts "Taking the easy way out huh?"
+        @quit = true
+      when "look"
+        describe_location
 
     end
 
+  end
+
+  def describe_location
+    if @current_building == nil
+      current_description = LOCATIONS.select do |location|
+        location[:location] == @current_location
+      end
+      puts current_description[0][:name]
+      puts current_description[0][:description]
+    else
+      #describe location
+      puts "you are in a building"
+    end
   end
 
   def parse_command(command)
