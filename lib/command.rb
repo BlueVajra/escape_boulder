@@ -45,45 +45,62 @@ class Command
     parsed_command = parse_command(command)
     case parsed_command[0]
       when "east"
-        if @current_location == @east_max
-          puts "Trying to leave Boulder already?"
+        if @current_building != nil
+          if @current_location == @east_max
+            puts "Trying to leave Boulder already?"
+          else
+            @current_location += 1
+            puts "going east"
+            describe_location
+          end
         else
-          @current_location += 1
-          puts "going east"
-          describe_location
+          puts "you are in a building... try exiting first"
         end
 
+
       when "west"
-        if @current_location == @west_min
-          puts "Trying to leave Boulder already?"
-        else
-          @current_location -= 1
-          puts "going west"
-          describe_location
-          if @current_location == 0
-            describe_quest_brief
+        if @current_building != nil
+          if @current_location == @west_min
+            puts "Trying to leave Boulder already?"
+          else
+            @current_location -= 1
+            puts "going west"
+            describe_location
+            if @current_location == 0
+              describe_quest_brief
+            end
           end
+        else
+          puts "you are in a building... try exiting first"
         end
 
       when "d"
-        if @current_location == @east_max
-          puts "Trying to leave Boulder already?"
+        if @current_building != nil
+          if @current_location == @east_max
+            puts "Trying to leave Boulder already?"
+          else
+            @current_location += 1
+            puts "going east"
+            describe_location
+          end
         else
-          @current_location += 1
-          puts "going east"
-          describe_location
+          puts "you are in a building... try exiting first"
         end
 
       when "a"
-        if @current_location == @west_min
-          puts "Trying to leave Boulder already?"
-        else
-          @current_location -= 1
-          puts "going west"
-          describe_location
-          if @current_location == 0
-            describe_quest_brief
+        if @current_building != nil
+          if @current_location == @west_min
+            puts "Trying to leave Boulder already?"
+          else
+            @current_location -= 1
+            puts "going west"
+            describe_location
+            if @current_location == 0
+              describe_quest_brief
+            end
           end
+        else
+          puts "you are in a building... try exiting first"
         end
       when "take"
         parsed_command.shift
