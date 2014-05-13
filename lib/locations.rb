@@ -9,7 +9,7 @@ LOCATIONS =[
   name: "10th and Pearl",
   description: "A beautiful spot at the west"
 }
-  
+
 
 
 ]
