@@ -1,4 +1,3 @@
-
 LOCATIONS =[
   {
     location: 0,
