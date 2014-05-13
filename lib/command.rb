@@ -8,6 +8,9 @@ require_relative 'locations'
 require_relative 'buildings'
 require_relative 'items'
 require_relative 'intro'
+require_relative 'quests'
+require_relative 'story'
+
 
 class Command
   def initialize
@@ -20,13 +23,13 @@ class Command
     @items = ITEMS
     @buildings = BUILDINGS
     @locations = LOCATIONS
-    #@quests = QUESTS
+    @quests = QUESTS
     @current_quest=0
   end
 
   def run
     puts TITLE
-    puts "INTRO GOES HERE"
+    puts STORY
     describe_quest
 
     until @quit == true
@@ -56,6 +59,9 @@ class Command
           @current_location -= 1
           puts "going west"
           describe_location
+          if @current_location == 0
+            describe_quest_brief
+          end
         end
       when "take"
         parsed_command.shift
@@ -70,7 +76,7 @@ class Command
         if @current_building == nil
           puts "You are not in a building... "
         else
-          @current_building == nil
+          @current_building = nil
           describe_location
         end
       when "quit"
@@ -125,17 +131,32 @@ class Command
     if @quests[@current_quest][:item].include?(item)
       puts "AWESOME!"
       @current_quest += 1
-      describe_quest
+      if @current_quest == 5
+        finish_quest
+      else
+        describe_quest
+      end
+
     else
       puts "thanks, but this is not going to help you get out of Boulder!"
     end
   end
 
   def describe_quest
+    puts ""
     puts "**********************"
     puts "* YOUR CURRENT QUEST *"
     puts "**********************"
-    puts @quests[@current_quest][:item]
+    puts @quests[@current_quest][:description]
+    puts "'please just bring me one of the following', Feld says."
+    @quests[@current_quest][:item].each do |item|
+      puts "- #{item}"
+    end
+  end
+
+  def describe_quest_brief
+    puts "????????????????????????????"
+    puts "Do you have anything for me?"
   end
 
   def list_inventory
@@ -162,7 +183,9 @@ class Command
       puts "you are in #{@current_building}"
       puts @buildings[@current_location][@current_building][:description]
       puts "you see the following items"
-      puts "- " + @items[@current_building].join(', ')
+      @items[@current_building].each do |item|
+        puts "- #{item}"
+      end
     end
     puts "-----------------"
     puts ""
@@ -184,6 +207,16 @@ class Command
     else
       puts "I don't see that... type 'look' to see what is there"
     end
+  end
+
+  def finish_quest
+    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    puts "Nice Job! You won!"
+    puts ""
+    puts "Now go fuck yourself"
+    puts ""
+    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    @quit = true
   end
 
   def parse_command(command)
