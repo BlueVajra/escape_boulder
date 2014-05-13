@@ -2,21 +2,21 @@ ITEMS =
   {
     "Quick Left" => ["nerd", "macbook air with stickers", "makeymakey"],
 
-    "Yellow Deli" => ["magic carpet ride", "white people", "hanging lamp from 1965"],
+    "Yellow Deli" => ["magic carpet ride", "cult member", "hanging lamp from 1965"],
 
-    "Sendgrid" => ["packages", "quickies", "flexibility"],
+    "SendGrid" => ["$5,698 chipotle tab", "fixies", "skinny jeans"],
 
-    "Galvanize" => ["construction workers", "ex pivots", "lesbians"],
+    "Galvanize" => ["an oddly placed bottle of lubricant", "ex pivots", "lesbians"],
 
     "Ozo" => ["old guy in biker shorts", "milf", "lesbians"],
 
-    "Pasta Jay's" => ["asshole looking for gluten-free pasta", "fat CU Alumni reliving the glory days", "expensive, crap food"],
+    "Pasta Jay's" => ["asshole looking for gluten-free pasta", "fat CU alumni reliving the glory days", "expensive, crap food"],
 
     "Hapa Sushi" => ["a room ergonomically designed to reduce paranoia", "blue dream", "threesome"],
 
     "Boulder Book Store" => ["mystical author", "cure for evil", "man who just ran 100 miles" ],
 
-    "Mile High" => ["man with anxiety", "women with glaucoma", "gutter punk with insomnia" ],
+    "Mile High" => ["man with anxiety", "woman with glaucoma", "gutter punk with insomnia" ],
 
     "Ben and Jerry's" => ["$6 ice cream cone", "trust fund stoner", "apathetic employee" ],
 
@@ -28,7 +28,7 @@ ITEMS =
 
     "Kasa" => ["fresh caught local walleye", "pure serenity", "umbrellas" ],
 
-    "Starbucks" => ["future gschool student", "milf", "prepubescent over-caffienated self-entitled teenagers"],
+    "Starbucks" => ["white people", "milf", "prepubescent over-caffienated self-entitled teenagers"],
 
   }
 
