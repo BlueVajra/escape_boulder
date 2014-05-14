@@ -1,0 +1,46 @@
+body{
+    background-color:black;
+    color:lawngreen;
+    font-family:'Courier New', monospace;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+header {
+    background-color:black;
+    width:100%;
+    top:0;
+    left:0;
+}
+main {
+    min-height: 100px;
+    padding-bottom:40px;
+    padding-top:1em;
+}
+
+footer {
+    background:black;
+    height: 40px;
+    padding-top:3px;
+    position: fixed;
+    width:100%;
+    bottom:0;
+
+}
+footer form span{
+    display:block;
+    float:left;
+    width:1em;
+}
+
+footer input {
+    background: black;
+    font-family:'Courier New', monospace;
+    color:lawngreen;
+    display: block;
+    outline: none;
+    height: 100%;
+    width: 95%;
+    margin-left:1em;
+    border: 0;
+}

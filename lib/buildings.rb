@@ -1,25 +1,3 @@
-#BUILDINGS= [
-#  {
-#    0 => {:building1 => :quick_left, description =>
-#      :building2 => :yellow_deli,
-#  :building3 => :send_grid},
-#  1 => {:building1 => :galvanize,
-#        :building2 => :ozo,
-#        :building3 => :pasta_jays},
-#  2 => {:building1 => :hapa_sushi,
-#        :building2 => :boulder_book_store,
-#        :building3 => :mile_high},
-#  3 => {:building1 => :ben_and_jerrys,
-#        :building2 => :enchanted_ink,
-#        :building3 => :boulder_cafe},
-#  4 => {:building1 => :fast_eddies,
-#        :building2 => :lush,
-#        :building3 => :lazy_dog},
-#  5 => {:building1 => :illegal_petes,
-#        :building2 => :kasa,
-#        :building3 => :starbucks},
-#}
-#]
 BUILDINGS = {
   0 => {
     "Quick Left" => {
@@ -54,16 +32,18 @@ BUILDINGS = {
       description: "$6.00 for a single scoop seems fair, right?"},
     "Enchanted Ink" => {
       description: "Doing 14 koi themed sleeves a day since 2010"},
-    "Boulder Cafe" => {
-      description: "Welcome to Boulder. We're nothing special."}
+    "Fast Eddie's" => {
+      description: "Is that a hot dog in your pocket, or am I just making really inappropriate comments about the
+                      size and current status of your penis?"}
+
   },
 
   4 => {
-    "Fast Eddie's" => {
-      description: "Is that a hot dog in your pocket, or am I just making really inappropriate comments about the
-                      size and current status of your penis?"},
+
     "Lush" => {
       description: "Because you're only beautiful if you spend $39 on a bath bomb"},
+    "Boulder Cafe" => {
+      description: "Welcome to Boulder. We're nothing special."}
     "Lazy Dog" => {
       description: "Straight out of the midwest: middle aged men, frat boys, and an excess of televisions. No homo."}
   },
