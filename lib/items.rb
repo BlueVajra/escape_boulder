@@ -28,7 +28,16 @@ ITEMS =
 
     "Kasa" => ["fresh caught local walleye", "pure serenity", "umbrellas" ],
 
-    "Starbucks" => ["white people", "milf", "prepubescent over-caffienated self-entitled teenagers"],
+    "Starbucks" => ["white people", "milf", "prepubescent over-caffinated self-entitled teenagers"],
+
+    "Lush" => ["zest lime and mango butter bomb for groggy mornings", "heel shavings", "ingrown pubic hair"],
+
+    "Fast Eddie's" => ["wieners","mayonnaise from 1969","over-abundance of penis jokes"],
+
+    "Lazy Dog" => ["90 inch tv", "dog bowl induced stomach cramping", "jock who thinks he knows way more about the Broncos everyone else"]
+
 
   }
+#require 'json'
+#puts JSON.pretty_generate(ITEMS)
 

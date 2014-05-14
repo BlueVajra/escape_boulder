@@ -28,10 +28,12 @@ http://escape-boulder.herokuapp.com/
 
 ## 1st Place Winners!
 1st place winner for the Boulder Start Up Week Hackathon at Quick Left!
+
 - ugly code
 - brilliant story telling
 - Makey Makey integration!
 
+### Team Awesome Sauce
 - Cory Leistikow
 - Jenny Allar
 - Nathanael Burt
