@@ -1,16 +1,24 @@
+$LOAD_PATH.unshift("lib")
 require 'sinatra/base'
-require_relative 'lib/locations'
+require 'json'
+
+require 'map_generator'
+require 'locations'
+require 'intro'
+require 'story'
+require 'quests'
+require 'items'
+require 'buildings'
 
 class App < Sinatra::Application
 
   get '/' do
-    File.read("public/index.html")
+    erb :index
   end
 
   get '/map/:location_id' do
     generator = MapGenerator.new(locations: LOCATIONS, current_location_id: params[:location_id].to_i)
     generator.generate
   end
-
 
 end
