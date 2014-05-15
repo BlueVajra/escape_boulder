@@ -518,7 +518,7 @@ function doCommand(command) {
 
     case "help":
       puts("You have the following commands");
-      puts("help, east, west, look, enter [building], exit, take [item], give [item], quest, inventory, quit");
+      puts("help, east, west, map, look, enter [building], exit, take [item], give [item], quest, inventory, quit");
       break;
 
     default:
