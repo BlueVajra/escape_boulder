@@ -182,7 +182,7 @@ class Command
     else
       puts "thanks, but this is not going to help you get out of Boulder!"
     end
-  endeast
+  end
 
   def describe_quest
     puts ""
