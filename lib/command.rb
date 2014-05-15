@@ -30,13 +30,14 @@ class Command
 
   def run
     puts TITLE
-    sleep(2)
+    sleep(1)
     puts STORY
-    sleep(2)
+    sleep(1)
     describe_quest
 
     until @quit == true
-      puts ">"
+      puts
+      print "> "
       command = gets.chomp
       do_command(command)
     end
