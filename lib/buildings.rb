@@ -43,7 +43,7 @@ BUILDINGS = {
     "Lush" => {
       description: "Because you're only beautiful if you spend $39 on a bath bomb"},
     "Boulder Cafe" => {
-      description: "Welcome to Boulder. We're nothing special."}
+      description: "Welcome to Boulder. We're nothing special."},
     "Lazy Dog" => {
       description: "Straight out of the midwest: middle aged men, frat boys, and an excess of televisions. No homo."}
   },

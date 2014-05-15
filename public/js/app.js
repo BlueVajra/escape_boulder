@@ -1,277 +1,19 @@
-var story = "You wake up on the sidewalk cold, wet, broke, slightly horny.";
-
-var quests = [
-  {
-    "description": "God damnit, I have no idea how long I've been here but I'm starving. Can you grab me\n                  some super over priced food?",
-    "item": [
-      "$6 ice cream cone",
-      "expensive, crap food",
-      "rocky mountain oysters",
-      "burrito as big as your head"
-    ]
-  },
-  {
-    "description": "Mmmm, this is so delicious, but the only way to really enjoy it is to eat it in front\n            of a bunch of other rich white people. Can you help me out with that?",
-    "item": [
-      "white people",
-      "asshole looking for gluten-free pasta",
-      "fat CU alumni reliving the glory days"
-    ]
-  },
-  {
-    "description": "I'm feeling a little generous today. I think it'd feel good to pay off some bad debts.\n            can you find a tab for me to settle somewhere?",
-    "item": [
-      "$5,698 chipotle tab"
-    ]
-  },
-  {
-    "description": "Perfect! Thanks! I just flew in from Texas and need a bit of cultural diversity in my life again.\n            Can you find me some lesbians?",
-    "item": [
-      "lesbians",
-      "lesbians getting matching rainbow tattoos"
-    ]
-  },
-  {
-    "description": "Awesome! All of these lesbians are making me feel a little romantictical. Why don't you bring\n            back some pair programmers and we can really get this party going?",
-    "item": [
-      "pair programmers gazing dreamily into one another's eyes"
-    ]
-  },
-  {
-    "description": "You've been fucking amazing and quite attractive, I might add. I can finally help you out of here.\n            You can take a ride on a  magic item at a chartreuse sandwich shop. Grab it, and you're out of here.\n            Now fuck off.",
-    "item": [
-      "magic carpet ride"
-    ]
-  }
-];
-
-var locations = [
-  {
-    "location": 0,
-    "name": "9th and Pearl",
-    "description": "The epicenter of Boulder. Bikes, geeks, and apothacary. Quick Left. University Bikes. And\na homeless dude who hassles all of the tourists."
-  },
-  {
-    "location": 1,
-    "name": "10th and Pearl",
-    "description": "The Galvanize Factory. Cranking out the next generation of wannabe developers one at\na time. Amazing top floor views and a crap-ton amount of Pivotal Labs Mike Gehard words of wisdom. Is the\nInternet really a dark alley? Run your test! Run your test! Run your test!"
-  },
-  {
-    "location": 2,
-    "name": "11th and Pearl",
-    "description": "Burned out dreams. Bad bongo-playing hippies and Trada! Where did it all go wrong? Tom's\nTavern should have never closed! Sorry, Tom! Salt sucks!"
-  },
-  {
-    "location": 3,
-    "name": "Broadway and Pearl",
-    "description": "Welcome to Freddy's and Nitro, the sausage kings! Lunch time lines replaced by late-night frenzy. Prana -- home\nto yoga tourists. Do we really need another place to buy $100 yoga pants?"
-  },
-  {
-    "location": 4,
-    "name": "13th and Pearl",
-    "description": "Oysters shipped UPS to the Boulder Cafe and offered half-price at Happy Hour. Shocker!\n Fire jugglers and the dude who can fold himself into a box. Pure Boulder Fun!"
-  },
-  {
-    "location": 5,
-    "name": "14th and Pearl",
-    "description": "The Boulder Theater. String Cheese is playing and it's impossible to see through the haze.\nWho knew Boulder had a problem with stinky skunks?! The Boulder health department has finally closed down the Cheescake\nFactory. RIP Shit hole!. Salvagio's took over the Lazy Dog and kicked out the frat boys. You can finally get a decent sandwich and watch\na game...for a mere $50"
-  },
-  {
-    "location": 6,
-    "name": "15th and Pearl",
-    "description": "Dojo4, Pivotal Labs. Send Grid's new digs. The pair programmers, arm and arm, race\ndown the mall in search of their $10 burritos. It's cheaper then San Francisco!"
-  }
-];
-
-var items = {
-  "Quick Left": [
-    "nerd",
-    "macbook air with stickers",
-    "makeymakey"
-  ],
-  "Yellow Deli": [
-    "magic carpet ride",
-    "cult member",
-    "hanging lamp from 1965"
-  ],
-  "SendGrid": [
-    "$5,698 chipotle tab",
-    "fixies",
-    "skinny jeans"
-  ],
-  "Galvanize": [
-    "an oddly placed bottle of lubricant",
-    "ex pivots",
-    "lesbians"
-  ],
-  "Ozo": [
-    "old guy in biker shorts",
-    "milf",
-    "lesbians"
-  ],
-  "Pasta Jay's": [
-    "asshole looking for gluten-free pasta",
-    "fat CU alumni reliving the glory days",
-    "expensive, crap food"
-  ],
-  "Hapa Sushi": [
-    "a room ergonomically designed to reduce paranoia",
-    "blue dream",
-    "threesome"
-  ],
-  "Boulder Book Store": [
-    "mystical author",
-    "cure for evil",
-    "man who just ran 100 miles"
-  ],
-  "Mile High": [
-    "man with anxiety",
-    "woman with glaucoma",
-    "gutter punk with insomnia"
-  ],
-  "Ben and Jerry's": [
-    "$6 ice cream cone",
-    "trust fund stoner",
-    "apathetic employee"
-  ],
-  "Enchanted Ink": [
-    "anchor tattoo",
-    "registered nurse",
-    "lesbians getting matching rainbow tattoos"
-  ],
-  "Boulder Cafe": [
-    "happiest hour",
-    "rocky mountain oysters",
-    "guy complaining about the loud music"
-  ],
-  "Illegal Pete's": [
-    "pair programmers gazing dreamily into one another's eyes",
-    "burrito as big as your head",
-    "guy in a band with a gig coming up"
-  ],
-  "Kasa": [
-    "fresh caught local walleye",
-    "pure serenity",
-    "umbrellas"
-  ],
-  "Starbucks": [
-    "white people",
-    "milf",
-    "prepubescent over-caffinated self-entitled teenagers"
-  ],
-  "Lush": [
-    "zest lime and mango butter bomb for groggy mornings",
-    "heel shavings",
-    "ingrown pubic hair"
-  ],
-  "Fast Eddie's": [
-    "wieners",
-    "mayonnaise from 1969",
-    "over-abundance of penis jokes"
-  ],
-  "Lazy Dog": [
-    "90 inch tv",
-    "dog bowl induced stomach cramping",
-    "jock who thinks he knows way more about the Broncos everyone else"
-  ]
-};
-
-var intro = "" +
-  "     ___  _____   __   ____  ____   ___      ____    ___   __ __  _      ___      ___  ____\n" +
-  "    /  _]/ ___/  /  ] /    ||    \\ /  _]    |    \\  /   \\ |  |  || |    |   \\    /  _]|    \\\n" +
-  "   /  [_(   \\_  /  / |  o  ||  o  )  [_     |  o  )|     ||  |  || |    |    \\  /  [_ |  D  )\n" +
-  "  |    _]\\__  |/  /  |     ||   _/    _]    |     ||  O  ||  |  || |___ |  D  ||    _]|    /\n" +
-  "  |   [_ /  \\ /   \\_ |  _  ||  | |   [_     |  O  ||     ||  :  ||     ||     ||   [_ |    \\\n" +
-  "  |     |\\    \\     ||  |  ||  | |     |    |     ||     ||     ||     ||     ||     ||  .  \\\n" +
-  "  |_____| \\___|\\____||__|__||__| |_____|    |_____| \\___/  \\__,_||_____||_____||_____||__|\\_|\n";
-
-
-var buildings = {
-  "0": {
-    "Quick Left": {
-      "description": "Battle arena for QLHackFest 2014, mother fucker."
-    },
-    "Yellow Deli": {
-      "description": "Fruit of the Spirit? What the fuck?"
-    },
-    "SendGrid": {
-      "description": "Check out their packages."
-    }
-  },
-  "1": {
-    "Galvanize": {
-      "description": "Jim Deter's Playground"
-    },
-    "Ozo": {
-      "description": "How much shit can we compost today?"
-    },
-    "Pasta Jay's": {
-      "description": "The only place in Boulder you're not judged for eating gluten."
-    }
-  },
-  "2": {
-    "Hapa Sushi": {
-      "description": "Weed, sex, and sushi. Boulder, in a nutshell."
-    },
-    "Boulder Book Store": {
-      "description": "Where you can find timeless classics while getting felt up in the theology section"
-    },
-    "Mile High": {
-      "description": "Seriously, these guys couldn't have thought of a better name?"
-    }
-  },
-  "3": {
-    "Ben and Jerry's": {
-      "description": "$6.00 for a single scoop seems fair, right?"
-    },
-    "Enchanted Ink": {
-      "description": "Doing 14 koi themed sleeves a day since 2010"
-    },
-    "Fast Eddie's": {
-      "description": "Is that a hot dog in your pocket, or am I just making really inappropriate comments about the\n                      size and current status of your penis?"
-    }
-
-  },
-  "4": {
-    "Boulder Cafe": {
-      "description": "Welcome to Boulder. We're nothing special."
-    },
-    "Lush": {
-      "description": "Because you're only beautiful if you spend $39 on a bath bomb"
-    },
-    "Lazy Dog": {
-      "description": "Straight out of the midwest: middle aged men, frat boys, and an excess of televisions. No homo."
-    }
-  },
-  "5": {
-    "Illegal Pete's": {
-      "description": "Overpriced burritos for East End Devs."
-    },
-    "Kasa": {
-      "description": "Has anyone actually been here?"
-    },
-    "Starbucks": {
-      "description": "COME. THE. FUCK. ON.     Starbucks? Really?"
-    }
-  }
-};
-
 window.current_location = 0;
 window.current_building = null;
 window.inventory = [];
 window.quit = false;
 window.west_min = 0;
 window.east_max = 5;
-window.items = items;
-window.buildings = buildings;
-window.locations = locations;
-window.quests = quests;
 window.current_quest = 0;
+
+function scroll(){
+  $("html, body").animate({ scrollTop: $("body").height() }, 0);
+}
 
 function puts(str) {
   var placeholder = 'game';
   $("div[data-placeholder=" + placeholder + "]").append($("<p>").append(str));
-  $("html, body").animate({ scrollTop: $(document).height() }, 500);
+  scroll();
 }
 
 function describe_quest() {
@@ -503,12 +245,12 @@ function doCommand(command) {
       break;
 
     case "map":
-      $.get("/map/" + window.current_location, function(art){
+      $.get("/map/" + window.current_location, function (art) {
         var $placeholder = $("div[data-placeholder=game]");
         $placeholder.append($("<p>").append($("<pre>").append(art)));
         $placeholder.append($("<p>&nbsp;</p>"));
         $placeholder.append($("<p>&nbsp;</p>"));
-        $("html, body").animate({ scrollTop: $(document).height() }, 500);
+        scroll();
       });
       break;
 
@@ -530,8 +272,10 @@ function doCommand(command) {
 $(document).on("submit", "form", function (e) {
   e.stopPropagation();
   e.preventDefault();
-  var command = $("input[data-id=input]").val();
-  $("input[data-id=input]").val("");
+  var $input = $("input[data-id=input]");
+  var command = $input.val();
+  $input.val("");
+  CommandHistory.store(command);
   doCommand(command);
   return false;
 });
@@ -539,14 +283,14 @@ $(document).on("submit", "form", function (e) {
 $(function () {
   setTimeout(
     function () {
-      $("div[data-placeholder=intro]").append($("<pre>").append(intro));
+      $("div[data-placeholder=intro]").show();
       setTimeout(
         function () {
           $("p[data-id=story]").show();
           describe_quest();
         },
-        600
+        300
       );
     },
-    600);
+    300);
 });
