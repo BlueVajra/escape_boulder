@@ -10,6 +10,7 @@ require_relative 'items'
 require_relative 'intro'
 require_relative 'quests'
 require_relative 'story'
+require_relative 'map_generator'
 
 
 class Command
@@ -123,13 +124,18 @@ class Command
         @quit = true
       when "look"
         describe_location
+      when "map"
+        generator = MapGenerator.new(locations: LOCATIONS, current_location_id: @current_location)
+        puts
+        puts generator.generate
+        puts
       when "inventory"
         list_inventory
       when "quest"
         describe_quest
       when "help"
         puts "You have the following commands"
-        puts "help, east, west, look, enter <building>, exit, take <item>, give <item>, quest, inventory, quit"
+        puts "help, east, west, map, look, enter <building>, exit, take <item>, give <item>, quest, inventory, quit"
       else
         puts "3 hours of programming doesn't leave much room for other commands"
 
