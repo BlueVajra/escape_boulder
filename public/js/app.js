@@ -275,6 +275,7 @@ $(document).on("submit", "form", function (e) {
   var $input = $("input[data-id=input]");
   var command = $input.val();
   $input.val("");
+  CommandHistory.store(command);
   doCommand(command);
   return false;
 });
