@@ -6,10 +6,14 @@ window.west_min = 0;
 window.east_max = 5;
 window.current_quest = 0;
 
+function scroll(){
+  $("html, body").animate({ scrollTop: $("body").height() }, 0);
+}
+
 function puts(str) {
   var placeholder = 'game';
   $("div[data-placeholder=" + placeholder + "]").append($("<p>").append(str));
-  $("html, body").animate({ scrollTop: $(document).height() }, 500);
+  scroll();
 }
 
 function describe_quest() {
@@ -241,12 +245,12 @@ function doCommand(command) {
       break;
 
     case "map":
-      $.get("/map/" + window.current_location, function(art){
+      $.get("/map/" + window.current_location, function (art) {
         var $placeholder = $("div[data-placeholder=game]");
         $placeholder.append($("<p>").append($("<pre>").append(art)));
         $placeholder.append($("<p>&nbsp;</p>"));
         $placeholder.append($("<p>&nbsp;</p>"));
-        $("html, body").animate({ scrollTop: $(document).height() }, 500);
+        scroll();
       });
       break;
 
