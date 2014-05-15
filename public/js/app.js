@@ -502,13 +502,23 @@ function doCommand(command) {
       list_inventory();
       break;
 
+    case "map":
+      $.get("/map/" + window.current_location, function(art){
+        var $placeholder = $("div[data-placeholder=game]");
+        $placeholder.append($("<p>").append($("<pre>").append(art)));
+        $placeholder.append($("<p>&nbsp;</p>"));
+        $placeholder.append($("<p>&nbsp;</p>"));
+        $("html, body").animate({ scrollTop: $(document).height() }, 500);
+      });
+      break;
+
     case "quest":
       describe_quest();
       break;
 
     case "help":
       puts("You have the following commands");
-      puts("help, east, west, look, enter [building], exit, take [item], give [item], quest, inventory, quit");
+      puts("help, east, west, map, look, enter [building], exit, take [item], give [item], quest, inventory, quit");
       break;
 
     default:
