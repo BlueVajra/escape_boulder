@@ -200,7 +200,7 @@ var buildings = {
   },
   "1": {
     "Galvanize": {
-      "desciption": "Jim Deter's Playground"
+      "description": "Jim Deter's Playground"
     },
     "Ozo": {
       "description": "How much shit can we compost today?"
