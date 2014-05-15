@@ -38,6 +38,4 @@ ITEMS =
 
 
   }
-#require 'json'
-#puts JSON.pretty_generate(ITEMS)
 
