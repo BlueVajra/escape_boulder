@@ -1,7 +1,8 @@
 class MapGenerator
 
   def initialize(options)
-    @streets = options[:streets]
+    @locations = options[:locations]
+    @current_location_id = options[:current_location_id]
   end
 
   def generate
@@ -9,11 +10,14 @@ class MapGenerator
     line_2_parts = []
     line_3_parts = []
 
-    @streets.each do |street|
+    @locations.each do |location|
+      street = location[:cross_street]
       street_length = street.length
       line_1_parts << street
       line_2_parts << "|".center(street_length, " ")
-      line_3_parts << ("-" * street.length)
+
+      marker = @current_location_id == location[:location] ? "X" : "-"
+      line_3_parts << marker.center(street_length, "-")
     end
 
     [

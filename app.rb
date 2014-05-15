@@ -7,10 +7,10 @@ class App < Sinatra::Application
     File.read("public/index.html")
   end
 
-  get '/map' do
-    street_names = LOCATIONS.map { |location| location[:cross_street] }
-    generator = MapGenerator.new(streets: street_names)
+  get '/map/:location_id' do
+    generator = MapGenerator.new(locations: LOCATIONS, current_location_id: params[:location_id].to_i)
     generator.generate
   end
+
 
 end

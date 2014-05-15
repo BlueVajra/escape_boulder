@@ -503,7 +503,7 @@ function doCommand(command) {
       break;
 
     case "map":
-      $.get("/map", function(art){
+      $.get("/map/" + window.current_location, function(art){
         var $placeholder = $("div[data-placeholder=game]");
         $placeholder.append($("<p>").append($("<pre>").append(art)));
         $placeholder.append($("<p>&nbsp;</p>"));
