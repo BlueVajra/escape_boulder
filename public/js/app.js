@@ -268,8 +268,9 @@ function doCommand(command) {
 $(document).on("submit", "form", function (e) {
   e.stopPropagation();
   e.preventDefault();
-  var command = $("input[data-id=input]").val();
-  $("input[data-id=input]").val("");
+  var $input = $("input[data-id=input]");
+  var command = $input.val();
+  $input.val("");
   doCommand(command);
   return false;
 });
