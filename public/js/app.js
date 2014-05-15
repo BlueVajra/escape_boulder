@@ -502,6 +502,15 @@ function doCommand(command) {
       list_inventory();
       break;
 
+    case "map":
+      $.get("/map", function(art){
+        $("div[data-placeholder=game]").append($("<p>").append($("<pre>").append(art)));
+        $("div[data-placeholder=game]").append($("<p>&nbsp;</p>"));
+        $("div[data-placeholder=game]").append($("<p>&nbsp;</p>"));
+        $("html, body").animate({ scrollTop: $(document).height() }, 500);
+      });
+      break;
+
     case "quest":
       describe_quest();
       break;
